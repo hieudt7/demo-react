@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+/// Configuration and helpers
+@import
+  'utils/variables',
+  'utils/functions',
+  'utils/mixins',
+  'utils/helpers';
+
+/// Vendors
+@import
+  'vendor/mq',
+  'vendor/animate',
+  'vendor/media-queries',
+  'vendor/normalize',
+  'vendor/jquery.slotmachine',
+  'vendor/react-draft-wysiwyg',
+  'vendor/datepicker',
+  'vendor/aos';
+
+/// Base
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography';
+
+/// Layout
+@import
+  'layout/header',
+  'layout/footer',
+  'layout/global';
+ 
+/// Components
+@import
+  'components/form',
+  'components/modal',
+  'components/web_animated',
+  'components/buttons';
+
+/// Page-specific
+@import
+  'pages/home',
+  'pages/login',
+  'pages/event';

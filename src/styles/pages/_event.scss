@@ -1,0 +1,440 @@
+.landing-page {
+    background-color: #fff;
+    min-height: 100vh;
+    padding-bottom: 30px;
+    position: relative;
+    // padding-bottom: 70px;
+    .animated{
+        animation-duration: 1s;
+    }
+    .tab-product {
+        color: #808184;
+
+        .pd-image {
+            position: relative;
+            padding: 0 15px;
+            margin-top: -170px;
+            z-index: 9;
+
+            h3 {
+                margin-bottom: 30px;
+                font-weight: 400;
+                font-size: 24px;
+                color: #fff;
+            }
+
+            img {
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            .wrap-img {
+                display: inline-block;
+                background-color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.23);
+            }
+        }
+
+        .product-name {
+            font-size: 28px;
+            text-transform: capitalize;
+            font-weight: 400;
+            margin-top: 15px;
+            padding: 0 15px;
+        }
+
+        .verify-info {
+            padding: 0 15px;
+            margin-top: 30px;
+
+            h3 {
+                color: #808184;
+                font-weight: 300;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: block;
+                    @include clearfix();
+                    font-size: 14px;
+                    border-bottom: 1px solid #d0d2d2;
+                    padding: 10px 0;
+
+                    span {
+                        display: block;
+                        font-weight: 400;
+
+                        &:first-child {
+                            float: left;
+                        }
+
+                        &:last-child {
+                            float: right;
+                            font-weight: 500;
+                            color: #000;
+                        }
+                    }
+
+                    &.line-text {
+                        font-size: 16px;
+                        font-weight: 500;
+                        font-style: italic;
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .veryfi-block {
+            margin-top: 20px;
+
+            input {
+                display: block;
+                width: 250px;
+                margin: 0 auto;
+                height: 38px;
+                border: 1px solid #e6e7e8;
+                border-radius: 8px;
+                background-color: #fff;
+                margin-bottom: 10px;
+                color: #f6921e;
+                font-size: 25px;
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+
+        .product-info {
+            padding: 0 15px;
+            margin-top: 30px;
+
+            h3 {
+                color: #808184;
+                font-weight: 300;
+            }
+        }
+
+        .product-related {
+            padding: 0 15px;
+            margin-top: 30px;
+
+            h3 {
+                color: #808184;
+                font-weight: 300;
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                li {
+                    padding: 0 10px;
+
+                    a {
+                        display: block;
+
+                        .name {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #555;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .tab-company {
+        .company-info {
+            padding: 0 15px;
+            margin-top: -130px;
+            position: relative;
+            z-index: 9;
+
+            .wrap-info {
+                background-color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.23);
+                text-align: center;
+                padding-bottom: 15px;
+
+                .box-avatar {
+                    display: inline-block;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.23);
+                    margin-top: -60px;
+                }
+
+                .company-name {
+                    font-size: 24px;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    color: #555;
+                    margin-top: 15px;
+                    margin-bottom: 5px;
+                }
+
+                .address {
+                    color: #52c1b3;
+                    font-weight: 400;
+                }
+
+                .contact {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    @include clearfix();
+
+                    li {
+                        float: left;
+                        width: 50%;
+                        text-align: center;
+
+                        p {
+                            font-size: 15px;
+                            text-transform: uppercase;
+                            margin-bottom: 5px;
+                            color: #717171;
+                            font-weight: 500;
+                        }
+
+                        a {
+                            font-size: 17px;
+                            color: #717171;
+                            font-weight: 400;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .more-info {
+                margin-top: 20px;
+
+                .title {
+                    font-weight: 400;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+    }
+
+    .banner-product {
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            position: absolute;
+            top: 30px;
+            color: #fff;
+            z-index: 9;
+            font-weight: 400;
+            left: 15px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #51c9c3, #95deda);
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 2;
+        }
+    }
+
+    .tab-feedback {
+        text-align: center;
+        padding: 0 15px;
+
+        .f-title {
+            font-size: 24px;
+            font-weight: 400;
+            text-transform: capitalize;
+            color: #555;
+            padding: 15px 0;
+        }
+
+        .f-group {
+            margin-bottom: 15px;
+            text-align: left;
+
+            label {
+                display: block;
+            }
+
+            input,
+            textarea {
+                height: 34px;
+                border-radius: 5px;
+                border: 1px solid #e6e7e8;
+                width: 100%;
+                outline: none;
+                padding: 0 15px;
+
+                &:focus {
+                    border: 1px solid #f6921e;
+                }
+            }
+
+            textarea {
+                height: auto;
+                padding: 10px;
+            }
+        }
+    }
+}
+
+.land-padd {
+    padding: 20px 15px 10px 15px;
+    font-size: 16px;
+}
+
+
+    .nav--checkbox {
+        display: none;
+    }
+
+    .nav--button {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        height: 60px;
+        width: 60px;
+        background: linear-gradient(90deg, #51c9c3, #95deda);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 666;
+    }
+
+    .nav--button span {
+        position: relative;
+        display: inline-block;
+        top: 30px;
+        left: 50%;
+        height: 3px;
+        width: 25px;
+        transform: translateX(-50%);
+    }
+
+    .nav--button span::after,
+    .nav--button span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        display: inherit;
+        height: inherit;
+        width: inherit;
+        background-color: #fff;
+    }
+
+    .nav--button span::before {
+        top: -5px;
+    }
+
+    .nav--button span::after {
+        top: 5px;
+    }
+
+    .nav--small {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        height: 40px;
+        width: 40px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        transition: all 500ms cubic-bezier(0.6, -0.5, 0.4, 1.5);
+        z-index: 1;
+        &.active{
+            background: linear-gradient(90deg, #51c9c3, #95deda) !important;
+        }
+    }
+
+    .nav--small a {
+        position: relative;
+        display: block;
+        height: inherit;
+        width: inherit;
+        border-radius: inherit;
+        text-decoration: none;
+        color: white;
+    }
+
+    .nav--small a img{
+        max-width: 25px;
+        max-height: 27px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .nav--btn-1 {
+        background-color: #b649d2;
+    }
+
+    .nav--btn-2 {
+        background-color: #5e50c3;
+        transition-delay: 50ms;
+    }
+
+    .nav--btn-3 {
+        background-color: #741077;
+        transition-delay: 100ms;
+    }
+
+    .nav--btn-4 {
+        background-color: #9aaeff;
+        transition-delay: 150ms;
+    }
+
+    .nav--checkbox:checked~.nav--btn-1 {
+        bottom: 105px;
+        right: 5px;
+    }
+
+    .nav--checkbox:checked~.nav--btn-2 {
+        bottom: 90px;
+        right: 50px;
+    }
+
+    .nav--checkbox:checked~.nav--btn-3 {
+        bottom: 55px;
+        right: 85px;
+    }
+
+    .nav--checkbox:checked~.nav--btn-4 {
+        bottom: 5px;
+        right: 95px;
+    }
+.btn-main {
+    font-weight: 500;
+    color: #fff;
+    border-radius: 50px;
+    height: 38px;
+    background: linear-gradient(90deg, #51c9c3, #95deda);
+    display: block;
+    margin: 0 auto;
+    width: 170px;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+}

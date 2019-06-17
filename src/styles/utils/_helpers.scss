@@ -1,0 +1,474 @@
+/// Helpers (helper classes & placeholders)
+
+/// Placeholders
+%clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+/// Display helpers
+.clearfix {
+  @extend %clearfix;
+}
+.float-left  { float: left; }
+.float-right { float: right; }
+
+.float-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display-inline       { display: inline; }
+.display-block        { display: block; }
+.display-inline-block { display: inline-block; }
+.display-none         { display: none; }
+
+// Hide element while making it readable for screen readers
+// Shamelessly borrowed from HTML5Boilerplate:
+// https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.margin-top-none  { margin-top: 0; }
+.margin-top-half  { margin-top: 0.5rem; }
+.margin-top-one   { margin-top: 1rem; }
+.margin-top-two   { margin-top: 2rem; }
+
+.margin-bottom-none  { margin-bottom: 0; }
+.margin-bottom-half  { margin-bottom: 0.5rem; }
+.margin-bottom-one   { margin-bottom: 1rem; }
+.margin-bottom-two   { margin-bottom: 2rem; }
+
+
+/// Text helpers
+.text-color   { color: $color-primary; }
+
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
+.text-center  { text-align: center; }
+.text-justify { text-align: justify; }
+
+.align-top    { vertical-align: top; }
+.align-bottom { vertical-align: bottom; }
+.align-middle { vertical-align: middle; }
+
+// Hide text while making it readable for screen readers
+// 1. Needed in WebKit-based browsers because of an implementation bug;
+//    See: https://code.google.com/p/chromium/issues/detail?id=457146
+.text-hide {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+.rating {
+  border: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: text-top;
+  margin-top: -5px;
+  label {
+    margin-bottom: 0;
+  }
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 7px;
+  font-size: 10px;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  margin-left: -3px;
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+ float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label { color: $yellow;  } /* hover previous stars in list */
+
+@keyframes scrolldown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.delay-1 {
+  animation-delay: 0.25s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.55s;
+}
+.delay-4 {
+  animation-delay: 0.7s;
+}
+.delay-5 {
+  animation-delay: 0.85s;
+}
+.delay-6 {
+  animation-delay: 1s;
+}
+.delay-7 {
+  animation-delay: 1.15s;
+}
+.delay-8 {
+  animation-delay: 1.3s;
+}
+.delay-9 {
+  animation-delay: 1.45s;
+}
+.delay-10 {
+  animation-delay: 1.6s;
+}
+.delay-11 {
+  animation-delay: 1.75s;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner-dot {
+  margin: 0 auto;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner-dot > div {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  opacity: .6;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner-dot .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner-dot .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+.react-confirm-alert-blur {
+  filter: none;
+}
+.ReactModalPortal {
+  position: relative;
+  z-index: 999;
+}
+
+.react-confirm-alert-overlay {
+  background-color: rgba(0, 0, 0, .8);
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block !important;
+  opacity: 1 !important;
+  animation: none !important;
+}
+#react-confirm-alert {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+#react-confirm-alert-firm-svg {
+  display: none;
+}
+.react-confirm-alert {
+  background: url(/images/popup-bg.png) no-repeat;
+  background-size: 100%;
+  text-align: center;
+  border-radius: 0;
+  position: fixed;
+  width: 564px;
+  height: 351px;
+  max-width: 750px;
+  top: 150px;
+  left: 50%;
+  margin-left: -282px;
+  padding: 50px 10px;
+  h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 1.6rem;
+    text-transform: none;
+    color: #fff;
+    margin-bottom: 100px;
+  }
+  .react-confirm-alert-button-group {
+    display: block;
+  }
+}
+.react-confirm-alert-button-group>button {
+  width: 126px;
+  height: 47px;
+  background: url(/images/btn-popup.png) no-repeat;
+  border: 0 !important;
+  line-height: 47px !important;
+  padding: 0 !important;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 10px #00baff;
+  margin-left: 20px;
+  margin-right: 20px;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+.react-confirm-alert-overlay {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+%grayscale,
+.grayscale {
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    transition: filter .25s ease;
+}
+
+%none-grayscale,
+.none-grayscale {
+  filter: none;
+  -webkit-filter: grayscale(0%);
+}
+/*************** SCROLLBAR BASE CSS ***************/
+
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+}
+
+.scroll-wrapper > .scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+}
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+.scroll-element {
+    display: none;
+}
+.scroll-element, .scroll-element div {
+    box-sizing: content-box;
+}
+
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+
+.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}
+.scroll-textarea > .scroll-content {
+    overflow: hidden !important;
+}
+.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+
+
+
+/*************** SIMPLE INNER SCROLLBAR ***************/
+
+.scrollbar-inner > .scroll-element,
+.scrollbar-inner > .scroll-element div
+{
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-inner > .scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-inner > .scroll-element.scroll-x {
+    bottom: 2px;
+    height: 8px;
+    left: 0;
+    width: 100%;
+}
+
+.scrollbar-inner > .scroll-element.scroll-y {
+    height: 100%;
+    right: 2px;
+    top: 0;
+    width: 8px;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_outer,
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_track,
+.scrollbar-inner > .scroll-element .scroll-bar {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_track { background-color: #e0e0e0; }
+.scrollbar-inner > .scroll-element .scroll-bar { background-color: #c2c2c2; }
+.scrollbar-inner > .scroll-element:hover .scroll-bar { background-color: #919191; }
+.scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar { background-color: #919191; }
+
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -12px; }
+
+
+.scrollbar-inner > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.scrollbar-inner > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }

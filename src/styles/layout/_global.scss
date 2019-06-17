@@ -1,0 +1,120 @@
+.hide-on-pc {
+    display: none !important;
+
+    @include device-1() {
+        display: block !important;
+    }
+}
+
+.hide-on-mobile {
+    @include device-1() {
+        display: none !important;
+    }
+}
+
+a {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn-green {
+    background-color: #4caf50;
+    border: 1px solid #4caf50;
+    color: #FFFFFF;
+    box-shadow: 0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12);
+    position: relative;
+    padding: 8px 30px;
+    margin: 10px 1px;
+    font-size: 14px;
+    font-weight: 400;
+    min-width: 140px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+        color: #fff;
+        transform: scale(0.85);
+    }
+}
+
+.btn-green-outline {
+    background-color: #fff;
+    color: #4caf50;
+    box-shadow: 0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12);
+    border: 1px solid #4caf50;
+    position: relative;
+    padding: 8px 30px;
+    margin: 10px 1px;
+    font-size: 14px;
+    font-weight: 400;
+    min-width: 140px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+        color: #4caf50;
+        transform: scale(0.85);
+    }
+}
+
+.group-text {
+    margin-bottom: 20px;
+
+    >label {
+        display: inline-block;
+        width: 150px;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    input,
+    select,
+    textarea {
+        width: calc(100% - 170px);
+        height: 34px;
+        outline: 0;
+        border: 1px solid #d2d2d2;
+        border-radius: 0;
+        padding: 0 10px;
+        color: #000;
+        &.react-dropdown-select-input{
+            border: 0;
+            width: auto;
+        }
+    }
+    textarea{
+        height: auto;
+    }
+}
+
+.disable-gray {
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
+.drop-ico-text {
+    left: 0 !important;
+    top: 30px !important;
+    transform: none !important;
+
+    .dropdown-item {
+        font-size: 14px;
+    }
+}
+.login-page{
+    header,
+    footer{
+        display: none;
+    }
+}
